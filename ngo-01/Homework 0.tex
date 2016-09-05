@@ -1,0 +1,331 @@
+\documentclass[a4paper]{article}
+\usepackage[letterpaper, margin=1in]{geometry} % page format
+\usepackage{listings,graphicx,amsmath, amssymb, amsfonts, amsthm,tikz,hyperref,fullpage,setspace,enumerate,mathtools,arydshln} 
+
+\title{Homework 0}
+\author{Helen Ngo}
+\date{\today}
+
+\begin{document}
+\lstset{language=Python}
+
+\maketitle
+
+\begin {description}
+
+\item[Problem 1] For the function $g(x) = -3x^2+24x-30$, find the value for $x$ that maximizes $g(x)$.
+
+\smallskip
+
+\textbf{Solution:}
+\begin{doublespace}
+All relative extrema can be found at the critical values of the function $g$ where the derivative $g'(x)=0$. Furthermore, one can determine if a critical value is a maxima using the second derivative test\cite{HB98}:
+
+"Suppose $f(x)$ is a function of $x$ that is twice differentiable at a stationary point $x_0$.
+\begin{enumerate}
+\item If $f''(x_0) > 0$, then $f$ has a local minimum at $x_0$.
+\item If $f''(x_0) < 0$, then $f$ has a local maximum at $x_0$."
+\end{enumerate}
+
+The derivative of $g(x)$ is $g'(x) = -6x + 24$, which can be rewritten as
+\[g'(x) = -6(x-4).\]
+Therefore, $x = 4$ is the only critical value. Then the second derivative is $g"(x) = -6$, $g"(4) = -6 < 0$ and by the second derivative test we can determine that at $x=4$, the function $g(x)$ is at a maxima. Since $x=4$ is a maxima and the only critical value of the function it is the global maxima, the value $x=4$ maximizes $g(x)$.
+\end{doublespace}
+
+\item[Problem 2] Consider the following function:
+\[f(x) = 3x_0^3-2x_0x_1^2+4x_1-8,\]
+what are the partial derivatives of $f(x)$ with respect to $x_0$ and $x_1$.
+
+\smallskip
+
+\textbf{Solution:}
+\begin{doublespace}
+In finding the partial derivative with respect of $x_i$, all other variables are treated as constants. Thus,
+\[f_{x_0}(x) = 9x_0^2-2x_1^2\] and
+\[f_{x_1}(x) = 4x_0x_1 + 4.\]
+\end{doublespace}
+
+
+\item[Problem 3] Consider the matrix 
+$
+A = 
+\begin{bmatrix}
+1 & 4 & -3\\
+2 & -1 & 3 
+\end{bmatrix}
+$
+and B=
+$
+M = 
+\begin{bmatrix}
+-2 & 0 & 5\\
+0 & -1 & 4
+\end{bmatrix}
+$,
+then answer the following and verify your answers in Python.
+\begin{enumerate}[(a)]
+\item Can you multiply the two matrices? Elaborate on your answer.
+\item Multiply $A^T$ and $B$ and give its rank.
+\item Let $C = \begin{bmatrix} 1 & 0 \\ 0 & 2 \end{bmatrix}$ be a new matrix; what is the result of $AB^T + C^{-1}$?
+\end{enumerate}
+
+\smallskip
+
+\textbf{Solution:}
+\begin{doublespace}
+\begin{enumerate}[(a)]
+\item In matrix multiplication, the row elements in the first matrix is combined with the corresponding column elements in the second matrix, such that column dimension of the first matrix must match the row dimension of the second matrix. Both matrices $A$ and $B$ have the same dimensions, but are not square matrices. Thus the matrices do not have the correct dimensions to be multiplied together.
+\item The transpose of matrix $A$,
+\begin{center}
+$
+A^T = 
+\begin{bmatrix}
+1 & 2\\
+4 & -1\\
+-3 & 3
+\end{bmatrix}
+$.
+\end{center}
+Then
+\begin{align*}
+A^TB &= 
+\begin{bmatrix}
+1 & 2\\
+4 & -1\\
+-3 & 3
+\end{bmatrix}
+\begin{bmatrix}
+-2 & 0 & 5\\
+0 & -1 & 4
+\end{bmatrix}\\
+\end{align*}.
+Using the matrix multiplication, the first element of the product matrix is $1(-2) + 2(0) = -2$. Solving the rest of the matrix in the same way we get the $3 \times 3$ matrix
+\[A^TB =
+\begin{bmatrix}
+-2 & -2 & 13 \\
+-8 & 1 & 16 \\
+6 & -3 & -3
+\end{bmatrix}.\]
+The rank of a matrix is the number of linearly independent rows (or columns) in the matrix. Using the "rref" function on a calculator, the reduced echelon form matrix $A^TB$ could be found as
+\begin{center}
+$
+\begin{bmatrix}
+1 & 0 & -2.5 \\
+0 & 1 & -4 \\
+0 & 0 & 0
+\end{bmatrix}
+$.
+\end{center}
+It can be seen from the reduced echelon form that there are two linearly independent rows, thus the rank of $A^TB$ is 2.
+\item In the augmented matrix method, we use Gauss-Jordan elimination to transform
+\[\left[\begin{array}{c:c}
+A & I 
+\end{array}
+\right]
+\rightarrow 
+\left[\begin{array}{c:c}
+I & A^{-1} 
+\end{array}
+\right]
+\]
+where $I$ is the identity matrix, $A$ is the original matrix and $A^{-1}$ is the inverse matrix. Then
+\begin{align*}
+\left[\begin{array}{c:c}
+C & I 
+\end{array}
+\right] = \left[\begin{array}{cc:cc}
+1 & 0 & 1 & 0 \\
+0 & 2 & 0 & 1
+\end{array}
+\right]  \rightarrow \left[\begin{array}{cc:cc}
+1 & 0 & 1 & 0 \\
+0 & 1 & 0 & \frac{1}{2}
+\end{array}
+\right] = \left[\begin{array}{c:c}
+I & C^{-1} 
+\end{array}
+\right].
+\end{align*}
+Therefore
+\begin{align*}
+AB^T + C^{-1} &=
+\begin{bmatrix}
+1 & 4 & -3\\
+2 & -1 & 3
+\end{bmatrix}
+\begin{bmatrix}
+-2 & 0 \\
+0 & -1 \\
+5 & 4
+\end{bmatrix}
++
+\begin{bmatrix}
+1 & 0 \\
+0 & \frac{1}{2}
+\end{bmatrix}\\
+&=
+\begin{bmatrix}
+-17 & -16 \\
+11 & 13
+\end{bmatrix}
++
+\begin{bmatrix}
+1 & 0 \\
+0 & \frac{1}{2}
+\end{bmatrix}\\
+&= 
+\begin{bmatrix}
+-16 & -16 \\
+11 & 13\frac{1}{2}
+\end{bmatrix}
+\end{align*}
+\end{enumerate}
+\end{doublespace}
+
+\item[Problem 4] Give the mathematical definitions of the simple Gaussian, multivariate Gaussian, Bernoulli, binomial and exponential distributions.
+
+\smallskip
+
+\textbf{Solution:}
+\begin{doublespace}
+A \underline{Gaussian} or normal distribution\cite{HB99} "in a variate $X$ with mean $\mu$ and variance $\sigma^2$ is a statistic distribution with probability density function
+\[P(x) = \frac{1}{\sqrt{2\pi}}\mathrm{e}^{-(x-\mu)^2/{2\sigma^2}}\]
+on the domain $x \in (-\infty,\infty)$." The distribution is associated with the Central Limit Theorem.
+
+The probability density function of the d-dimensional \underline{multivariate Gaussian}\cite{HB98} or normal distribution is given by 
+\[y=f(x,\mu,\Sigma) = \frac{1}{\sqrt{|\Sigma|(2\pi)^d}}\mathrm{e}^{-\frac{1}{2}(x-\mu)'\Sigma^{-1}(x-\mu)}\]
+where $x$ and $\mu$ are 1-by-d vectors and $\Sigma$ is a d-by-d symmetric positive definite matrix.
+
+A Bernoulli trial is a random experiment with two outcomes. The probability density function, mean, variance and moment generating function of a \underline{Bernoulli Distribution}\cite{HB100} for a random variable $X$ is 
+\begin{align*}
+P(X = x|\pi) &= \pi^x(1-\pi)^{1-x}, x=0,1 \\
+E[X] &= \pi \\
+Var[X] &= \pi(1-\pi) \\
+M_x(t) = \pi\mathrm{e}^t+\varrho.
+\end{align*}
+
+An experiment with a fixed number of $n$ independent Bernoulli trials with the random variable $X$, the number of observed successes during the $n$ trials is called a Binomial experiment. The corresponding distribution, the \underline{binomial Distribution}\cite{HB101} has the following pdf, mean, variance and mgf:
+\begin{align*}
+P(X = x|n,\pi) &= {n \choose x}\pi^x(1-\pi)^{n-x}, x = 0,1,2,\dots,n.\\
+E[X] &= n\pi \\
+Var[X] &= n \pi(1-\pi) \\
+M_x(t) &= (\pi\ mathrm{e}^t+\varrho)^n.
+\end{align*}
+
+The \underline{exponential distribution}\cite{HB101} is "characterized by a lack of memory property and is often used to model lifetimes of electronic components as well as waiting times for Poisson processes." The pdf, mean, variance and mgf of an exponential distribution is 
+\begin{align*}
+f(x|\lambda) &= \\
+E[X] &= \frac{1}{\lambda} \\
+Var[X] &= \frac{1}{\lambda^2}  \\
+M_x(t) &= (1-\lambda^{-1}t)^{-1} for t < \lambda.
+\end{align*}
+
+In the definitions above, please note that $\pi$ is the probability of success and $\lambda$ is the mean.
+\end{doublespace}
+
+\item[Problem 5] What is the relationship between the Bernoulli and binomial distributions?
+
+\smallskip
+
+\textbf{Solution:}
+\begin{doublespace}
+The Bernoulli distribution shows the distribution of the outcomes of Bernoulli trial, a "random experiment with only two possible outcomes".\cite{HB101} The binomial distribution shows the distribution of a sequence of a fixed number of independent Bernoulli trials, and the probability of success at each trial is the same. In other words, the Bernoulli distribution considers one Bernoulli trial, and binomial distribution considers $n$ Bernoulli trials.
+\end{doublespace}
+
+\item[Problem 6] Suppose that random variable $X ~ N(2,3)$. What is its expected value?
+
+\smallskip
+
+\textbf{Solution:}
+\begin{doublespace}
+The expected value of a normal distribution is its mean, $E[X] = \mu$, and a normal distribution is denoted as $X~N(\mu,\sigma)$. Therefore the expected value of random variable $X ~ N(2,3)$ is 2.
+\end{doublespace}
+
+\item[Problem 7] An euclidean projection of a d-dimensional point $y\in \mathbb{R}^d$ toa set $Z$ is given by the following optimization problem:
+\[x^* = arg_x min \|x-y\|_2^2, \mathrm{subject to}: x \in Z\]
+where $Z$ is the feasible set, $\|\cdot\|_2$ is the $l_2-$norm (euclidian) of a vector, and $x^* \in \mathbb{R}^d$ is the projected vector.
+\begin{enumerate}[(a)]
+\item What is $x^*$ if $y=1.1$ and $Z = \mathbb{N}$, where $\mathbb{N} is the set of natural numbers$?
+\item Locate $x^*$ in a picture.
+\end{enumerate}
+
+\smallskip
+
+\textbf{Solution:}
+\begin{doublespace}
+The argument minimizes the distance between $x$ and $y$. Since $y=1.1$ and $x\in Z=\mathbb{N}$, $x^* =1$. This is can be determined by observation.
+  \begin{center}
+    \includegraphics{7b.jpg}
+  \end{center}
+\end{doublespace}
+
+\item[Problem 8] Suppose that random variable $Y$ has distribution
+\[ p(Y=y) =
+  \begin{cases}
+   \mathrm{e}^{-y}       & \quad \text{if } y \geq 0\\
+    0  & \quad \text{otherwise}\\
+  \end{cases}
+\]
+
+\smallskip
+
+\textbf{Solution:}
+\begin{doublespace}
+\begin{enumerate}[(a)]
+\item 
+\begin{align*}
+\int_{y=-\infty}^\infty \! p(Y=y)  \, \mathrm{d}x &= \lim_{a \rightarrow -\infty} \int_a^0 \! 0 \mathrm{d}x + \lim_{b \rightarrow \infty} \int_0^b \! \mathrm{e}^{-y} \, \mathrm{d}y \\
+&= 0 + \lim_{b \rightarrow \infty} \int_0^b \! \mathrm{e}^{-y} \, \mathrm{d}y \\
+&= \lim_{b \rightarrow \infty} - \mathrm{e}^{-b} + \mathrm{e}^0 \\
+&= 0 + 1 = 1 
+\end{align*}
+The sum of all probabilities for the random variable adds up to 1.
+\item
+\begin{align*}
+\mu_Y &= E[Y] \\
+&= \int_{y=-\infty}^\infty \! p(Y=y)y \, \mathrm{d}y \\
+&= \lim_{a \rightarrow -\infty} \int_a^0 \! 0y \, \mathrm{d}y + \lim_{b \rightarrow \infty} \int_0^b \! \mathrm{e}^{-y}y \, \mathrm{d}y \\
+&= 0 + \lim_{b \rightarrow \infty} -\mathrm{e}^{-y}(y+1) \Big |_0^b \\
+&= \lim_{b \rightarrow \infty} - \mathrm{e}^{-b}(y+1) + \mathrm{e}^0(0+1) \\
+&= 1
+\end{align*}
+The expected value of $Y$, $E[Y] = 1$.
+\item
+Note that the result from part (b) was used.
+\begin{align*}
+\sigma^2 &= Var[Y] \\
+&= \int_{y=-\infty}^\infty \! p(Y=y)(y - \mu_Y)^2 \, \mathrm{d}y \\
+&= \lim_{a \rightarrow -\infty} \int_a^0 \! 0 \, \mathrm{d}y + \lim_{b \rightarrow \infty} \! mathrm{e}^{-y} (y -1)^2 \, \mathrm{d}y \\
+&= 0 + \lim_{b \rightarrow \infty} \int \! \mathrm{e}^{-y}(y-1)^2 \, \mathrm{d}y \\
+&= \lim_{b \rightarrow \infty} \int \! \mathrm{e}^{-y}(y^2 - 2y + 1) \, \mathrm{d}y \\
+&= \lim_{b \rightarrow \infty} \int \! (y^2\mathrm{e}^{-y}\mathrm{e}^{-y} - 2y + \mathrm{e}^{-y}) \, \mathrm{d}y * \\
+&= \lim_{b \rightarrow \infty} -\mathrm{e}^{-y}(y^2+2y+2)-2\mathrm{e}^{-y}(y+1) + \mathrm{e}^{-y} \Big |_0^b \\
+&= \lim_{b \rightarrow \infty} - \mathrm{e}^{-y}(y^2+1) \Big |_0^b \\
+&= \lim_{b \rightarrow \infty} - \mathrm{e}^{-b}(y^2+1) + \mathrm{e}^0(0^2+1) \\
+&= 0 + 1(1) = 1
+\end{align*} 
+The variance of $Y$, $Var[Y] = 1$.
+\item The expected value of $Y$ given that $Y \geq 10$ can be found with the integral in part (b) and evaluating the integral from 10 to $\infty$.
+\begin{align*}
+\int_10^b \! \mathrm{e}^{-y}y \, \mathrm{d}y &= \lim_{b \rightarrow \infty} \int_10^b \! \mathrm{e}^{-y}y \, \mathrm{d}y \\
+&= \lim_{b \rightarrow \infty} - \mathrm{e}^{-y}(y+1) \Big |_10^b \\
+&= \lim_{b \rightarrow \infty} - \mathrm{e}^{-b}(b+1) + \mathrm{e}^{-10}(10+1) \\
+&= 0 + \frac{1}{\mathrm{e}^{10}}(11) \\
+&= \frac{11}{\mathrm{e}^{10}} \\
+& \approx 0.00049940. 
+\end{align*}
+\end{enumerate}
+\end{doublespace}
+
+\footnotesize
+\begin{thebibliography}{99}
+
+  \bibitem{HB98} Weisstein, Eric W. "Second Derivative Test." From MathWorld--A Wolfram Web Resource.
+  \bibitem{HB99} Weisstein, Eric W. "Normal Distribution." From MathWorld--A Wolfram Web Resource.
+  \bibitem{HB100} "Multivariate Normal Distribution." MathWorks. The MathWorks, Inc., n.d. Web. 04 Sept. 2016.
+  \bibitem{HB101} Ugarte, María Dolores., Ana F. Militino, and Alan T. Arnholt. Probability and Statistics with R. 2nd ed. Boca Raton, FL: CRC, 2016. Print.
+
+
+\end{thebibliography}
+\end {description}
+\end{document}

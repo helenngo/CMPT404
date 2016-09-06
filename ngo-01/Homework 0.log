@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  4 SEP 2016 22:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  6 SEP 2016 08:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -767,41 +767,58 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 13.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
 
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
+ []
 
+[1
+
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+[2
+
+] [3]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 193.
+
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 193.
+ [4]
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 213.
+(amsmath)                 on input line 248.
 
-[4] <7b.jpg, id=55, 246.9225pt x 121.45375pt>
+[5] [6] <7b.jpg, id=88, 246.9225pt x 121.45375pt>
 File: 7b.jpg Graphic file (type jpg)
  <use 7b.jpg>
-Package pdftex.def Info: 7b.jpg used on input line 258.
+Package pdftex.def Info: 7b.jpg used on input line 293.
 (pdftex.def)             Requested size: 246.92188pt x 121.45343pt.
- [5] [6 <./7b.jpg>]
-[7]
+ [7 <./7b.jpg>]
+[8]
 Missing character: There is no í in font cmr8!
- [8]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 331.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 331.
+ [9
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 367.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 367.
  (./Homework 0.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 331.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 331.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 367.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 367.
 Package rerunfilecheck Info: File `"Homework 0".out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 331.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 367.
  ) 
 Here is how much of TeX's memory you used:
- 18205 strings out of 493089
- 332833 string characters out of 6134842
- 428843 words of memory out of 5000000
- 21347 multiletter control sequences out of 15000+600000
+ 18411 strings out of 493089
+ 335073 string characters out of 6134842
+ 436843 words of memory out of 5000000
+ 21524 multiletter control sequences out of 15000+600000
  11196 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,16n,54p,494b,539s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,16n,54p,494b,1989s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
@@ -817,10 +834,10 @@ ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
 2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/20
 15/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Homework 0.pdf" (8 pages, 189465 bytes).
+Output written on "Homework 0.pdf" (9 pages, 194466 bytes).
 PDF statistics:
- 139 PDF objects out of 1000 (max. 8388607)
- 111 compressed objects within 2 object streams
- 28 named destinations out of 1000 (max. 500000)
+ 174 PDF objects out of 1000 (max. 8388607)
+ 145 compressed objects within 2 object streams
+ 54 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

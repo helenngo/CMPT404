@@ -1,0 +1,94 @@
+22 pts
+
+Helen,
+
+You showed a nice proof that you have all the necessary setup for python.
+
+You showed a nice proof that you have a GitHub account and that you added me as a
+collaborator.
+
+You provided a nice proof that you created a Kaggle account.
+
+About the problems:
+1. 
+You have the correct answer and a good explanation.
+
+2. 
+You have a correct answer and a good explanation.
+
+3.(a)
+You have a very good explanation.
+You provided Python code to support your answer.
+
+3.(b)
+You have the correct answer and a very good explanation.
+You provided Python code to support your answer.
+
+3.(c) 
+You provided a correct answer and a good explanation.
+You provided Python code to support your answer.
++1pt extra credit for answering a graduate student question.
+
+4. Gaussian
+The Gaussian distribution equation you provided is missing a $\sigma$ -1pt
+
+4. Multivariate Gaussian
+You provided the correct multivariate Gaussian formula.
+Since we are dealing with vectors and matrices, and only if you want to show
+that the multivariate and single variable Gaussian are different, you could use
+$\mathbf{x}$ or $\mathbf{\Sigma}$ to indicate that they are a vector and a matrix
+respectively.
+I would use $P(X=x)$ rather than $f(x...)$, the P-notation is preferred.
+
+4. Bernoulli
+The formula you provided is correct.
+
+4. Binomial
+You provided the correct binomial distribution equation.
+It is preferred to use $P(x; n, \pi)$ to indicate that n and $\pi$ are
+parameters. The notation $P(x| n, \pi)$ usually indicates that x is conditioned
+on the variables n and $\pi$. 
+There seems to be a problem in one of your equations. 
+
+4. Exponential
+The equation you provided seems to have the main formula missing. -1pt
+
+5.
+You provided a very good explanation.
++1pt extra credit for answering a graduate student question.
+
+6.
+You have the correct answer and a good explanation.
+
+7.(a)
+You provided the correct answer.
+
+7.(b)
+The picture you provided is a little dark, but it is legible nonetheless.
+
+8.(a)
+You provided a correct answer and development of it.
+
+8.(b)
+You provided a good development and a correct answer.
+
+8.(c)
+You showed a good development of your correct answer.
+There seems to be a problem in one of your equations, in the third line.
+
+8.(d)
+You have the correct answer and a good development of it.
+
+About your $\LaTeX$ work:
+- It seems like you put a lot of effort on it. 
+- If this was your first time, you did great!
+- Be careful when using thing like $M = \pi\ mathrm{e}^t$ because this will
+  yield something you do not want; notice the space between \ and mathrm. You
+  do not want that space. Instead, do $M = \pi \mathrm{e}^t$ which I think is
+  what you want.
+
+Overall a great job!
+
+Peace,
+
+- Dr. Pablo Rivas

@@ -92,6 +92,8 @@ The first iteration produces a graph with a data set of size 20 with a black tar
 
 Although the final hypothesis function $g$ is relatively close to the target function $f$, it should be noted that the points from the two regions are close to each other, and that all final hypothesis functions with no misclassifications would be close to the target function.
 
+\newpage
+
 \item Running the perceptron learning algorithm again, with another randomly generated data set of size 20, the final hypothesis function $g_1$ and target function $f_1$ against the data set are shown below.
 
 \begin{center}
@@ -99,6 +101,8 @@ Although the final hypothesis function $g$ is relatively close to the target fun
 \end{center}
 
 It can be seen that $g_1$ is not as close to $f_1$ as $g$ is to $f$. Since the sets of data is different, it makes sense that their final hypothesis functions would have a different relationship to their respective target functions.
+
+\newpage
 
 \item Before running the algorithm for a randomly generated data set of size 100, the ''pla" function in algorithm was modified so that only the last iteration would be saved and the iteration count printed.
 
@@ -129,6 +133,8 @@ It can be seen that $g_1$ is not as close to $f_1$ as $g$ is to $f$. Since the s
         self.w = w
 \end{lstlisting}
 
+\newpage
+
 The main function was also modified so that the perceptron generates a data set of size 100.
 
 \begin{lstlisting}[frame=single]
@@ -140,16 +146,11 @@ def main():
 main()
 \end{lstlisting}
 
-The experiment was repeated twice since the first trial surprisingly concluded after only 19 iterations.
+The experiment was repeated twice since the first trial surprisingly concluded after only 19 iterations. The second trial concluded after 77 iterations.
 
 \begin{center}
-\includegraphics{Problem_4d1.png}
-\end{center}
-
-The second trial concluded after 77 iterations.
-
-\begin{center}
-\includegraphics{Problem_4d2.png}
+\includegraphics[scale=0.5]{Problem_4d1.png}
+\includegraphics[scale=0.5]{Problem_4d2.png}
 \end{center}
 
 Due to the wide range of results and the small sample size of trials, it is hard to compare the results for $N=20$ to $N=100$. Based solely on these four trials, the range of iterations until the final hypothesis function is found is greater for $N=100$ than $N=20$, and it generally takes more iterations for $N=100$ to reach the final hypothesis.
@@ -164,16 +165,14 @@ Due to the wide range of results and the small sample size of trials, it is hard
 
 \item In order to repeat the algorithm on the same data as (f), a few modifications were made to the perceptron learning algorithm;the full script is attached. The main function was altered as shown below so that only one set of 1000 points are generated for 100 trials of the perceptron on those points. After all trials are completed, a histogram is produced for the number iterations.
 
-\newpage
-
 \begin{lstlisting}[frame=single]
 def main():
     iterations = np.empty([100,1])
     p = Perceptron(1000)
     for i in range(100):
-        iterations[i] = p.pla(seedling=i)
-        print (iterations[i])
+        iterations[i] = p.pla()
         print (i)
+        print (iterations[i])
     plt.hist(iterations)
     plt.title("Perceptron Iterations Histogram, N=1000")
     plt.xlabel("Number of Iterations")
@@ -184,7 +183,7 @@ def main():
 main()
 \end{lstlisting}
 
-Note that there is an additional input variable for the pla function, $seedling$, that changes as the trials change. This variable is passed into the pla function and then choose\_miscl\_point function so that the seed for random will always be different. A histogram of the iterations needed for a valid final hypothesis for the data set, such that each misclassified point is picked randomly is shown below.
+A histogram of the iterations needed for a valid final hypothesis for the data set, such that each misclassified point is picked randomly is shown below.
 
 \begin{center}
 \includegraphics[scale =0.75]{PerceptronIterationsHistogram.png}

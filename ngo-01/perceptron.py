@@ -6,12 +6,9 @@ import matplotlib.pyplot as plt
 class Perceptron:
     def __init__(self, N):
         # Random linearly separated data
-        xA,yA,xB,yB,xC,yC,xD,yD,xE,yE,xF,yF,xG,yG,xH,yH,xI,yI,xJ,yJ = [random.uniform(-1, 1) for i in range(20)]
-        self.V = np.array([xA*xB*xC*xD*xE*xF*xG*xH*xI*xJ-yA*yB*yC*yD*yE*yF*yG*yH*yI*yJ\
-            ,xA-yA,xB-yB,xC-yC,xD-yD,xE-yE,xF-yF,xG-yG,xH-yH,xI-yI,xJ-yJ])
+        self.V = (np.random.rand(11)*2)-1
         self.X = self.generate_points(N)
 
- 
     def generate_points(self, N):
         X = []
         for i in range(N):
@@ -59,8 +56,7 @@ class Perceptron:
         error = n_mispts / float(M)
         return error
  
-    def choose_miscl_point(self, vec,seedling):
-        # Choose a random point among the misclassified
+    def choose_miscl_point(self, vec):
         pts = self.X
         mispts = []
         for x,s in pts:
@@ -77,7 +73,7 @@ class Perceptron:
         while self.classification_error(w) != 0:
             it += 1
             # Pick random misclassified point
-            x, s = self.choose_miscl_point(w,seedling)
+            x, s = self.choose_miscl_point(w)
             # Update weights
             w += s*x
             if it > 10000:
@@ -102,9 +98,9 @@ def main():
     iterations = np.empty([100,1])
     p = Perceptron(1000)
     for i in range(100):
-        iterations[i] = p.pla(seedling=i)
-        print (iterations[i])
+        iterations[i] = p.pla()
         print (i)
+        print (iterations[i])
     plt.hist(iterations)
     plt.title("Perceptron Iterations Histogram, N=1000")
     plt.xlabel("Number of Iterations")

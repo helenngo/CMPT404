@@ -160,7 +160,37 @@ Due to the wide range of results and the small sample size of trials, it is hard
 \includegraphics{Problem_4e.png}
 \end{center}
 
-\item 
+\item The algorithm was modified so that it takes $x_n \in \mathbb{R}^{10}$ instead of $\mathbb{R}^2$ by altering the init and generate\_points functions so that the target function is produced in ten dimensions. Using a randomly generated set of 1000 points in $\mathbb{R}^{10}$, it took $2600$ iterations. The python script attached shows that modifications made to the mentioned functions.
+
+\item In order to repeat the algorithm on the same data as (f), a few modifications were made to the perceptron learning algorithm;the full script is attached. The main function was altered as shown below so that only one set of 1000 points are generated for 100 trials of the perceptron on those points. After all trials are completed, a histogram is produced for the number iterations.
+
+\newpage
+
+\begin{lstlisting}[frame=single]
+def main():
+    iterations = np.empty([100,1])
+    p = Perceptron(1000)
+    for i in range(100):
+        iterations[i] = p.pla(seedling=i)
+        print (iterations[i])
+        print (i)
+    plt.hist(iterations)
+    plt.title("Perceptron Iterations Histogram, N=1000")
+    plt.xlabel("Number of Iterations")
+    plt.ylabel("Frequency")
+    plt.savefig('Perceptron Iterations Histogram, N=1000') 
+    plt.show()
+
+main()
+\end{lstlisting}
+
+Note that there is an additional input variable for the pla function, $seedling$, that changes as the trials change. This variable is passed into the pla function and then choose\_miscl\_point function so that the seed for random will always be different. A histogram of the iterations needed for a valid final hypothesis for the data set, such that each misclassified point is picked randomly is shown below.
+
+\begin{center}
+\includegraphics[scale =0.75]{PerceptronIterationsHistogram.png}
+\end{center}
+
+\item As the number of points $N$ and dimensions $d$ increases the the running time increases. As the number of dimensions increases, the accuracy decreases. Although no trials did not converge in the experiment conducted in (g), while experimenting with different data set of size 1000 in $\mathbb{R}^{10}$, the algorithm did not converge after 10000 iterations, which is significantly more iterations than trials that did converge under ten thousand iterations.
 \end{enumerate}
 \end{doublespace}
 \footnotesize

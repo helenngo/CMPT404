@@ -6,16 +6,17 @@ import matplotlib.pyplot as plt
 class Perceptron:
     def __init__(self, N):
         # Random linearly separated data
-        w1,w2,w3 = [random.uniform(-1, 1) for i in range(3)]
-        self.V = np.array([w1,w2,w3])
-        print(self.V)
+        xA,yA,xB,yB,xC,yC,xD,yD,xE,yE,xF,yF,xG,yG,xH,yH,xI,yI,xJ,yJ = [random.uniform(-1, 1) for i in range(20)]
+        self.V = np.array([xA*xB*xC*xD*xE*xF*xG*xH*xI*xJ-yA*yB*yC*yD*yE*yF*yG*yH*yI*yJ\
+            ,xA-yA,xB-yB,xC-yC,xD-yD,xE-yE,xF-yF,xG-yG,xH-yH,xI-yI,xJ-yJ])
         self.X = self.generate_points(N)
+
  
     def generate_points(self, N):
         X = []
         for i in range(N):
-            x1,x2 = [random.uniform(-1, 1) for i in range(2)]
-            x = np.array([1,x1,x2])
+            x1,x2,x3,x4,x5,x6,x7,x8,x9,x10 = [random.uniform(-1, 1) for i in range(10)]
+            x = np.array([1,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10])
             s = int(np.sign(self.V.T.dot(x)))
             X.append((x, s))
         return X
@@ -58,7 +59,7 @@ class Perceptron:
         error = n_mispts / float(M)
         return error
  
-    def choose_miscl_point(self, vec):
+    def choose_miscl_point(self, vec,seedling):
         # Choose a random point among the misclassified
         pts = self.X
         mispts = []
@@ -67,18 +68,20 @@ class Perceptron:
                 mispts.append((x, s))
         return mispts[random.randrange(0,len(mispts))]
  
-    def pla(self, save=False):
+    def pla(self, save=False,seedling=0):
         # Initialize the weigths to zeros
-        w = np.zeros(3)
+        w = np.zeros(11)
         X, N = self.X, len(self.X)
         it = 0
         # Iterate until all points are correctly classified
         while self.classification_error(w) != 0:
             it += 1
             # Pick random misclassified point
-            x, s = self.choose_miscl_point(w)
+            x, s = self.choose_miscl_point(w,seedling)
             # Update weights
             w += s*x
+            if it > 10000:
+                break
         # Plot and save the last iteration.
         if save:
                 self.plot(vec=w)
@@ -87,17 +90,26 @@ class Perceptron:
                 plt.xlabel('x-axis')
                 plt.ylabel('y-axis')
                 plt.savefig('p_N%s_it%s' % (str(N),str(it)), \
-                            dpi=200, bbox_inches='tight')
-        # Print iteration count.
-        print(it)    
+                            dpi=200, bbox_inches='tight') 
         self.w = w
+        return it
  
     def check_error(self, M, vec):
         check_pts = self.generate_points(M)
         return self.classification_error(vec, pts=check_pts)
 
 def main():
-    p = Perceptron(30)
-    p.plot
-    p.pla(save=True)
+    iterations = np.empty([100,1])
+    p = Perceptron(1000)
+    for i in range(100):
+        iterations[i] = p.pla(seedling=i)
+        print (iterations[i])
+        print (i)
+    plt.hist(iterations)
+    plt.title("Perceptron Iterations Histogram, N=1000")
+    plt.xlabel("Number of Iterations")
+    plt.ylabel("Frequency")
+    plt.savefig('Perceptron Iterations Histogram, N=1000') 
+    plt.show()
+
 main()

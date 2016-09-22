@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage{inputenc}
+
+\title{AI Project Proposal}
+\author{Helen Ngo}
+\date{September 22, 2016}
+
+\begin{document}
+
+\maketitle
+
+\section{Project Idea \#1}
+Caffe, a deep learning library developed by the Berkeley Vision and Learning Center and community contributors, is freely assessable on GitHub.\cite{caffe} There are currently $3,779$ commits among $210$ contributors for that repository. I propose that I mathematically prove part of the code of a specific application in Caffe, where the application was edited by various contributors. Due to the community aspect of Caffe, the code is a work in progress with many authors. In addition, it is well commented and the library as a whole is well documented. Also, the MATLAB and Python bindings will give me an opportunity to learn Python while maintaining some comfort with MATLAB. 
+
+I am particularly interested in algorithms dealing with image processing such as object detection or pixelwise prediction. The deep learning algorithm used in Caffe for pixelwise prediction is documented in ``Fully Convolutional Networks for Semantic Segmentation"\cite{pixel}, which has a hierarchical foundation. The FCNs algorithm creates deep coarse layer to shallow fine layers, such that when combined an accurate and detailed segmentation is produced. I would like to give mathematical foundation as to why the process works and how it has improved image processing, especially when used in conjuncture with a different algorithm for image processing. 
+
+Since the reference implementation of the models and code for the FCNs has not reached it's final version, the ultimate goal would be to understand the material to the extent that I would be able to recognize areas of possible improvement. The improvement can be in terms of accuracy or speed/optimization. It is important to note that improvements to the accuracy may have a negative effect on speed, and not worth it. In theory, my project should provide a proof of improvement to the algorithm (as a function of time) and demonstrate the benefits of collaborative work. 
+
+\newpage
+
+\section{Project Idea \#2}
+Another idea is to use ``Detailed NFL Play-by-Play Data" provided by Max Horowitz, though Kaggle\cite{nfl} and Github, to create an algorithm to predict the next play of the opponent in an NFL game. The algorithm will also provide the optimal play to counter the opponent, taking into consideration of the possible plays that the home team has conducted in the past, and the record of the opponent's play. 
+
+If you think that this is a better idea, I will write a full proposal on it.
+\begin{thebibliography}{9}
+\bibitem{caffe}
+https://github.com/BVLC/caffe
+
+\bibitem{pixel}
+Shelhamer, Evan, Jonathon Long, and Trevor Darrell. 
+    \textit{"Fully Convolutional Networks for Semantic Segmentation."} IEEE Transactions on Pattern Analysis and Machine Intelligence IEEE Trans. Pattern Anal. Mach. Intell. (2016): 1. Web.
+
+\bibitem{nfl}
+https://www.kaggle.com/maxhorowitz/nflplaybyplay2015
+\end{thebibliography}
+
+\end{document}

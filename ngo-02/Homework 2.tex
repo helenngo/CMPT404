@@ -135,7 +135,7 @@ The python code is attached.
 \includegraphics[scale=0.65]{Problem_3_1b.png}
 \end{center}
 
-While the separating lines above are similar, linear regression classification will always give us the line with the lowest variance while the PLA just produces a separating line. This can be better observed for another set of data, the linear regression line and perceptron line are shown below for it.
+While the separating lines above are similar, linear regression classification will always give us the line with the lowest least square error while the PLA produces a classifying line with no error, but have a higher least square error. This can be better observed for another set of data, the linear regression line and perceptron line are shown below for it.
 
 \begin{center}
 \includegraphics[scale=0.65]{Problem_3_1_c.png}
@@ -150,7 +150,7 @@ While the separating lines above are similar, linear regression classification w
 
 \textbf{Solution:}
 \begin{doublespace}
-Despite the varying size of the separation between semi-circles $sep$, the number of iterations that the PLA ran remained relatively constant; no relationship between $sep$ and number of iterations could be determined. In the plot below, the y-axis is the frequency and the x-axis is the $sep$. 
+As the separation $sep$ between the semicircles increase, the number of iterations it takes for the PLA to find a solution increases. The overall trend trend of the relationship follows an exponential trend instead of a linear trend. A plot of the $sep$ versus the number of iterations is shown below with the code in the main function of the attached python code.
 
 \begin{center}
 \includegraphics[scale=0.65]{Problem_3_2.png}

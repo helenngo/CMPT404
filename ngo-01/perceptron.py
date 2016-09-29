@@ -80,13 +80,13 @@ class Perceptron:
                 break
         # Plot and save the last iteration.
         if save:
-                self.plot(vec=w)
-                plt.title('N = %s, Iteration %s\n' \
-                          % (str(N),str(it)))
-                plt.xlabel('x-axis')
-                plt.ylabel('y-axis')
-                plt.savefig('p_N%s_it%s' % (str(N),str(it)), \
-                            dpi=200, bbox_inches='tight') 
+            self.plot(vec=w)
+            plt.title('N = %s, Iteration %s\n' \
+                    % (str(N),str(it)))
+            plt.xlabel('x-axis')
+            plt.ylabel('y-axis')
+            plt.savefig('p_N%s_it%s' % (str(N),str(it)), \
+                        dpi=200, bbox_inches='tight') 
         self.w = w
         return it
  

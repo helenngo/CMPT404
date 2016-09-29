@@ -7,7 +7,7 @@ class Perceptron:
     def __init__(self,n_samples=2000, thk=5, rad=10, sep=5.0):
         # Random linearly separated data
         self.V = (np.random.rand(3)*2)-1
-        self.X = self.make_semi_circles(n_samples,thk,rad,sep)
+        self.X = self.make_semi_circles(n_samples,sep)
 
     def make_semi_circles(self,n_samples=2000, thk=5, rad=10, sep=5, plot=False):
         noisey = np.random.uniform(low=-thk/100.0, high=thk/100.0, size=(n_samples // 2))
@@ -161,13 +161,15 @@ def main():
     for k in range(1,26):
         p = Perceptron(n_samples=2000,sep=k*0.2)
         iterations[k-1] = p.pla()
-
+    
+    plt.ylim(0,10)
     l = np.linspace(0.2, 5, 25, endpoint=True)
     plt.plot(l, iterations, 'b-')
-    plt.xlabel('Separation (sep)')
-    plt.ylabel('Number of Iterations')
+    plt.xlabel('x-axis')
+    plt.ylabel('y-axis')
     plt.savefig('Problem_3_2', \
-      	         dpi=200, bbox_inches='tight')
+                dpi=200, bbox_inches='tight')
+
     print(iterations)
 
 main()

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  29 SEP 2016 10:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  29 SEP 2016 18:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -790,11 +790,11 @@ File: Problem_3_1_c.png Graphic file (type png)
 Package pdftex.def Info: Problem_3_1_c.png used on input line 141.
 (pdftex.def)             Requested size: 216.55447pt x 240.04195pt.
  [5 <./Problem_3_1b.png> <./Problem_3_1_c.png>]
-<Problem_3_2.png, id=59, 502.63785pt x 400.01445pt>
+<Problem_3_2.png, id=59, 510.2262pt x 400.01445pt>
 File: Problem_3_2.png Graphic file (type png)
  <use Problem_3_2.png>
 Package pdftex.def Info: Problem_3_2.png used on input line 156.
-(pdftex.def)             Requested size: 326.71072pt x 260.0063pt.
+(pdftex.def)             Requested size: 331.6431pt x 260.0063pt.
 
 [6 <./Problem_3_2.png>]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 162.
@@ -824,7 +824,7 @@ ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loc
 al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/
 texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on "Homework 2.pdf" (6 pages, 379327 bytes).
+Output written on "Homework 2.pdf" (6 pages, 365262 bytes).
 PDF statistics:
  103 PDF objects out of 1000 (max. 8388607)
  76 compressed objects within 1 object stream

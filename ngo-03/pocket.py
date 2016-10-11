@@ -2,68 +2,84 @@ import numpy as np
 import random
 import os, subprocess
 import matplotlib.pyplot as plt
+import copy
+from sklearn.datasets.samples_generator import make_blobs
+import time
  
-class Perceptron:
-    def __init__(self,n_samples=2000, thk=5, rad=10, sep=5.0):
+class Pocket:
+    def __init__(self, N=100):
         # Random linearly separated data
         self.V = (np.random.rand(3)*2)-1
-        self.X = self.make_semi_circles(n_samples,sep)
+        self.X = self.generate_points(N)
 
-    def make_semi_circles(self,n_samples=2000, thk=5, rad=10, sep=5, plot=False):
-        noisey = np.random.uniform(low=-thk/100.0, high=thk/100.0, size=(n_samples // 2))
-        noisex = np.random.uniform(low=-rad/100.0, high=rad/100.0, size=(n_samples // 2))
-        separation = np.ones(n_samples // 2)*((-sep*0.1)-0.6)
-        n_samples_out = n_samples // 2
-        n_samples_in = n_samples - n_samples_out
-    
-        # generator = check_random_state(random_state)
-        outer_circ_x = np.cos(np.linspace(0, np.pi, n_samples_out)) + noisex
-        outer_circ_y = np.sin(np.linspace(0, np.pi, n_samples_out)) + noisey
-        inner_circ_x = (1 - np.cos(np.linspace(0, np.pi, n_samples_in))) + noisex
-        inner_circ_y = (1 - np.sin(np.linspace(0, np.pi, n_samples_in)) - .5) + noisey + separation
-        
-        t = np.ones((n_samples,1),dtype=np.int)
-        x = np.vstack((np.append(outer_circ_x, inner_circ_x),
-                    np.append(outer_circ_y, inner_circ_y))).T
-        s = np.vstack([np.ones((n_samples_in,1), dtype=np.int)*-1,
-                np.ones((n_samples_out,1), dtype=np.int)])
-        
-        x = np.hstack((t,x))
-        X = []
-        for i in range(n_samples):
-            X.append((x[i], s[i]))
-        return X
+    def generate_points(self, N=2000):
+   		# Generates random centers
+   		ctrs = 3 * np.random.normal(0,1,(2,2))
+   		# Generates random data following normal distributions
+   		X,y = make_blobs(n_samples=N, centers=ctrs, n_features=2,
+   			cluster_std=1.0, shuffle=False, random_state=0)
+   		y[y==0] = -1 # makes sure we have +1/-1 labels
+   		# y[[0,1,2,3,4]] = 1
+   		# Define x1, x2 limits
+   		self.x1min= np.floor(np.amin(X[:,0]))
+   		self.x1max = np.ceil(np.amax(X[:,0]))
+   		self.x2min = np.floor(np.amin(X[:,1]))
+   		self.x2max = np.ceil(np.amax(X[:,1]))
+   		# Plots data
+   		c0 = plt.scatter(X[y==-1,0],X[y==-1,1], 
+   			s=20, color='r', marker='x')
+   		c1 = plt.scatter(X[y==1,0],X[y==1,1], 
+   			s=20, color='b', marker='o')
+   		# c2 = plt.scatter(X[y==1,0][[0,1,2,3,4]],
+   		# 	X[y==1,1][[0,1,2,3,4]], 
+   		# 	s=20, color='c', marker='o')
+   		# Display legend
+   		plt.legend((c0,c1), ('Class -1', 'Class 1'), 
+   			loc='upper right',scatterpoints=1, fontsize=11)
+   		# Dispay axis legends and title
+   		plt.xlabel(r'$x_1$')
+   		plt.ylabel(r'$x_2$')
+   		plt.title(r'Two Simple Cluster of Random Data')
+   		# Saves the figure into a .pdf file
+   		plt.savefig('hw3_plot.pdf',bbox_inches='tight')
+   		plt.show()
+   		# Create x matrix
+   		x0 = np.ones((N,1),dtype=np.int)
+   		x = np.hstack((x0,X))
+   		X = []
+   		for i in range(N):
+   			X.append((x[i], y[i]))
+   		return X
  
-    def plot(self, mispts=None, vec=None, save=False,line=False):
-        fig = plt.figure(figsize=(5,5))
-        plt.xlim(-2.5,2.5)
-        plt.ylim(-2.5,2.5)
-        l = np.linspace(-2.5,2.5)
-
-        if line: 
-            w = self.linear_regression()
-            m, b = -w[1]/w[2], -w[0]/w[2]
-            plt.plot(l, m*l+b, 'k-')
-        
-        cols = {1: 'r', -1: 'b'}
-        for x,s in self.X:
-            plt.plot(x[1], x[2], cols[s[0]]+'o')
-        if mispts:
-            for x,s in mispts:
-                plt.plot(x[1], x[2], cols[s[0]]+'.')
-        if vec != None:
+    def plot(self, mispts=None, vec=None, vec0=None, lr_vec=None, save=False, file='plot.pdf'):
+    	plt.figure()
+    	# Define x1, x2 limits
+    	plt.axis([self.x1min, self.x1max,self.x2min, self.x2max])
+    	l = np.linspace(self.x1min,self.x1max)
+    	# Ploting data
+    	cols = {1: 'bo', -1: 'rx'}
+    	for x,y in self.X:
+            plt.plot(x[1], x[2], cols[y])
+    	if mispts:
+        	for x,y in mispts:
+        		plt.plot(x[1], x[2], cols[y])
+        # Plot functiions
+    	if vec != None:
             aa, bb = -vec[1]/vec[2], -vec[0]/vec[2]
             plt.plot(l, aa*l+bb, 'g-', lw=2)
-        if save:
+    	if vec0 != None:
+            aa, bb = -vec0[1]/vec0[2], -vec0[0]/vec0[2]
+            plt.plot(l, aa*l+bb, 'g:', lw=1)
+    	if lr_vec != None:
+            aa, bb = -lr_vec[1]/lr_vec[2], -lr_vec[0]/lr_vec[2]
+            plt.plot(l, aa*l+bb, 'k-', lw=2)
+    	if save:
             if not mispts:
                 plt.title('N = %s' % (str(len(self.X))))
             else:
                 plt.title('N = %s with %s test points' \
                           % (str(len(self.X)),str(len(mispts))))
-            plt.savefig('p_N%s' % (str(len(self.X))), \
-                        dpi=200, bbox_inches='tight')
-        if line:
-            return w
+            plt.savefig(file, dpi=200, bbox_inches='tight')
  
     def classification_error(self, vec, pts=None):
         # Error defined as fraction of misclassified points
@@ -85,91 +101,92 @@ class Perceptron:
                 mispts.append((x, s))
         return mispts[random.randrange(0,len(mispts))]
  
-    def pla(self, save=False,line=False):
+    def pla(self, save=False, linear_regression=False, 
+    	file='pocket_learning.pdf'):
+        # Initialize the weights to solution of linear regression
+        if linear_regression:
+        	lr_vec = self.linear_regression()
+        	w0 = copy.deepcopy(lr_vec)
+        	w = copy.deepcopy(w0)
         # Initialize the weigths to zeros
-        w = np.zeros(3)
+        else:
+        	w = np.zeros(3)
+        	w0 = np.zeros(3)
+        # Reassign variables
         X, N = self.X, len(self.X)
+        # Initialize convergence and iteration counters
+        count = 0
         it = 0
         # Iterate until all points are correctly classified
         while self.classification_error(w) != 0:
             it += 1
             # Pick random misclassified point
-            x, s = self.choose_miscl_point(w)
+            x, y = self.choose_miscl_point(w0)
             # Update weights
-            w += s*x
+            w0 += y*x
+            # Update if new weights are better
+            if self.classification_error(w)>self.classification_error(w0):
+            	w = copy.deepcopy(w0)
+            	count = 0
+            else:
+                count += 1
+            # Converge after 500 iterations with the same wieghts
+            if count > 500:
+            	break
+            # Converge after 10000 iterations overall 
             if it > 10000:
                 break
         self.w = w
-        # Plot and save the last iteration.
+        # Plot and save the last iteration
         if save:
-            if line: 
-                w = self.plot(vec=w,line=True)
+            if linear_regression: 
+                self.plot(vec=w, vec0=w0, lr_vec=lr_vec, 
+                	file=file, save=True)
             else:
-                self.plot(vec=w)
-            plt.title('N = %s, Iteration %s\n' \
-                    % (str(N),str(it)))
-            plt.xlabel('x-axis')
-            plt.ylabel('y-axis')
-            plt.savefig('p_N%s_it%s' % (str(N),str(it)), \
-                        dpi=200, bbox_inches='tight') 
-        if line:
-            return it, w
-        else:
-            return it
+                self.plot(vec=w, vec0=w0, file=file, save=True)
+        # Return number of iterations
+        return it
  
     def check_error(self, M, vec):
         check_pts = self.generate_points(M)
         return self.classification_error(vec, pts=check_pts)
 
-    def linear_regression(self,save=False):
-
+    def linear_regression(self, save=False, file='linear_regression.pdf'):
+        # Reshape X matrix in order to calculate solution
         X = []
-        for x,s in self.X:
+        for x,y in self.X:
             X.extend(x)
-            X.extend(s)
-
+            X.extend([y])
         X = np.array(X).reshape(-1, 4)
         N = len(X)
         x = X[:,[0,1,2]]
         y = X[:,3]
+        # Compute weights using equation
         w = np.linalg.pinv(x.T.dot(x)).dot(x.T).dot(y)
-
+        # Plot and save the solution of linear regression
         if save:
-            fig = plt.figure(figsize=(5,5))
-            plt.xlim(-2.5,2.5)
-            plt.ylim(-2.5,2.5)
-            cols = {1: 'r', -1: 'b'}
-
-            for x,s in self.X:
-                plt.plot(x[1], x[2], cols[s[0]]+'o')
-
-            l = np.linspace(-2.5,2.5)
-            m, b = -w[1]/w[2], -w[0]/w[2]
-            plt.plot(l, m*l+b, 'k-')
-            plt.xlabel('x-axis')
-            plt.ylabel('y-axis')
-            plt.savefig('p_N%s_linear_regression' % (str(N)), \
-                        dpi=200, bbox_inches='tight')
-
+        	self.plot(vec=None, vec0=None, lr_vec=w, file=file, save=True)
+        # Return weights
         return w
 
         
 def main():
-    #w = p.linear_regression(save=True)
-    #print(w)
-    iterations = np.empty([25,1])
-    for k in range(1,26):
-        p = Perceptron(n_samples=2000,sep=k*0.2)
-        iterations[k-1] = p.pla()
-    
-    plt.ylim(0,10)
-    l = np.linspace(0.2, 5, 25, endpoint=True)
-    plt.plot(l, iterations, 'b-')
-    plt.xlabel('x-axis')
-    plt.ylabel('y-axis')
-    plt.savefig('Problem_3_2', \
-                dpi=200, bbox_inches='tight')
-
+    np.random.seed(6)
+    p = Pocket(N=500)
+    # pocket algorithm
+    localtime = time.asctime( time.localtime(time.time()) )
+    print ("Start time for pocket algorithm:", localtime)
+    iterations = p.pla(save=True)
     print(iterations)
-
+    # linear regression
+    localtime = time.asctime( time.localtime(time.time()) )
+    print ("Start time for linear regression:", localtime)
+    p.linear_regression(save=True)
+    localtime = time.asctime( time.localtime(time.time()) )
+    # pocket with linear regression start
+    print ("Start time for pocket algorithm with linear regression solution:", localtime)
+    iterations = p.pla(save=True,linear_regression=True, file='pocket_with_lr.pdf')
+    print(iterations)
+    localtime = time.asctime( time.localtime(time.time()) )
+    print ("End:", localtime)
 main()

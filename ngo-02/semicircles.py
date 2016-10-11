@@ -4,7 +4,7 @@ import os, subprocess
 import matplotlib.pyplot as plt
  
 class Perceptron:
-    def __init__(self,n_samples=2000, thk=5, rad=10, sep=5.0):
+    def __init__(self,n_samples=100, thk=5, rad=10, sep=5.0):
         # Random linearly separated data
         self.V = (np.random.rand(3)*2)-1
         self.X = self.make_semi_circles(n_samples,thk,rad,sep)

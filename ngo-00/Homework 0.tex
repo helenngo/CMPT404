@@ -244,7 +244,7 @@ An experiment with a fixed number of $n$ independent Bernoulli trials with the r
 P(X = x|n,\pi) &= {n \choose x}\pi^x(1-\pi)^{n-x}, x = 0,1,2,\dots,n.\\
 E[X] &= n\pi \\
 Var[X] &= n \pi(1-\pi) \\
-M_x(t) &= (\pi\ mathrm{e}^t+\varrho)^n.
+M_x(t) &= (\pi\mathrm{e}^t+\varrho)^n.
 \end{align*}
 
 The \underline{exponential distribution}\cite{HB101} is "characterized by a lack of memory property and is often used to model lifetimes of electronic components as well as waiting times for Poisson processes." The pdf, mean, variance and mgf of an exponential distribution is 
@@ -330,7 +330,7 @@ Note that the result from part (b) was used.
 \begin{align*}
 \sigma^2 &= Var[Y] \\
 &= \int_{y=-\infty}^\infty \! p(Y=y)(y - \mu_Y)^2 \, \mathrm{d}y \\
-&= \lim_{a \rightarrow -\infty} \int_a^0 \! 0 \, \mathrm{d}y + \lim_{b \rightarrow \infty} \! mathrm{e}^{-y} (y -1)^2 \, \mathrm{d}y \\
+&= \lim_{a \rightarrow -\infty} \int_a^0 \! 0 \, \mathrm{d}y + \lim_{b \rightarrow \infty} \mathrm{e}^{-y} (y -1)^2 \, \mathrm{d}y \\
 &= 0 + \lim_{b \rightarrow \infty} \int \! \mathrm{e}^{-y}(y-1)^2 \, \mathrm{d}y \\
 &= \lim_{b \rightarrow \infty} \int \! \mathrm{e}^{-y}(y^2 - 2y + 1) \, \mathrm{d}y \\
 &= \lim_{b \rightarrow \infty} \int \! (y^2\mathrm{e}^{-y}\mathrm{e}^{-y} - 2y + \mathrm{e}^{-y}) \, \mathrm{d}y * \\

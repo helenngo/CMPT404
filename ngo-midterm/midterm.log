@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 OCT 2016 20:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 OCT 2016 22:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"Homework 3.tex"
-(./Homework 3.tex
+**midterm.tex
+(./midterm.tex
 LaTeX2e <2015/01/01>
 Babel <3.9l> and hyphenation patterns for 79 languages loaded.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/article.cls
@@ -653,23 +653,23 @@ Package: arydshln 2004/08/31 v1.71
 \adl@everyvbox=\toks41
 \adl@LTpagetotal=\dimen192
 )
-(./Homework 3.aux)
-\openout1 = `"Homework 3.aux"'.
+(./midterm.aux)
+\openout1 = `midterm.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -736,7 +736,7 @@ e
 ))
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box43
-Package hyperref Info: Link coloring OFF on input line 9.
+Package hyperref Info: Link coloring OFF on input line 10.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -746,202 +746,105 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count161
 )
-LaTeX Info: Redefining \ref on input line 9.
-LaTeX Info: Redefining \pageref on input line 9.
-LaTeX Info: Redefining \nameref on input line 9.
+LaTeX Info: Redefining \ref on input line 10.
+LaTeX Info: Redefining \pageref on input line 10.
+LaTeX Info: Redefining \nameref on input line 10.
 
-(./Homework 3.out) (./Homework 3.out)
+(./midterm.out) (./midterm.out)
 \@outlinefile=\write4
-\openout4 = `"Homework 3.out"'.
+\openout4 = `midterm.out'.
 
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2014/09/06 1.5e listings language file
-)
-LaTeX Font Info:    Try loading font information for U+msa on input line 13.
+LaTeX Font Info:    Try loading font information for U+msa on input line 12.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 13.
+LaTeX Font Info:    Try loading font information for U+msb on input line 12.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./pocket.py
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 17.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2014/09/06 1.5e listings language file
+)
+(./midterm.py [1
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 127.
+
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 17.
- [1
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 127.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 129.
 
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]) [2]
-<Trial_1/hw3_plot.pdf, id=59, 504.83449pt x 409.42021pt>
-File: Trial_1/hw3_plot.pdf Graphic file (type pdf)
 
-<use Trial_1/hw3_plot.pdf>
-Package pdftex.def Info: Trial_1/hw3_plot.pdf used on input line 38.
-(pdftex.def)             Requested size: 328.13852pt x 266.11998pt.
-
-<Trial_1/pocket_learning.pdf, id=60, 488.14714pt x 392.73286pt>
-File: Trial_1/pocket_learning.pdf Graphic file (type pdf)
-
-<use Trial_1/pocket_learning.pdf>
-Package pdftex.def Info: Trial_1/pocket_learning.pdf used on input line 44.
-(pdftex.def)             Requested size: 244.07297pt x 196.36595pt.
- [3 <./Trial_1/hw3_plot.pdf> <./Trial_1/pocket_learning.pdf
-
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Trial_1/pocket_learning.pd
-f): PDF inclusion: multiple pdfs with page group included in a single page
->] <Trial_1/linear_regression.pdf, id=132, 488.14714pt x 392.73286pt>
-File: Trial_1/linear_regression.pdf Graphic file (type pdf)
-
-<use Trial_1/linear_regression.pdf>
-Package pdftex.def Info: Trial_1/linear_regression.pdf used on input line 48.
-(pdftex.def)             Requested size: 244.07297pt x 196.36595pt.
-
-<Trial_1/pocket_with_lr.pdf, id=133, 488.14714pt x 392.73286pt>
-File: Trial_1/pocket_with_lr.pdf Graphic file (type pdf)
-
-<use Trial_1/pocket_with_lr.pdf>
-Package pdftex.def Info: Trial_1/pocket_with_lr.pdf used on input line 52.
-(pdftex.def)             Requested size: 244.07297pt x 196.36595pt.
- (./pocket.py [4 <./Trial_1/linear_regression.pdf> <./Trial_1/pocket_with_lr.pd
-f
-
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Trial_1/pocket_with_lr.pdf
-): PDF inclusion: multiple pdfs with page group included in a single page
->]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 128.
-
- (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omlcmr.fd
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 128.
-) [5]
-<Trial_4/hw3_plot.pdf, id=207, 500.99985pt x 409.42021pt>
-File: Trial_4/hw3_plot.pdf Graphic file (type pdf)
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 129.
+)
+<By_Zero/midterm_plot.pdf, id=55, 510.58252pt x 409.42021pt>
+File: By_Zero/midterm_plot.pdf Graphic file (type pdf)
 
-<use Trial_4/hw3_plot.pdf>
-Package pdftex.def Info: Trial_4/hw3_plot.pdf used on input line 65.
-(pdftex.def)             Requested size: 325.64604pt x 266.11998pt.
+<use By_Zero/midterm_plot.pdf>
+Package pdftex.def Info: By_Zero/midterm_plot.pdf used on input line 39.
+(pdftex.def)             Requested size: 331.8747pt x 266.11998pt.
+ [2 <./By_Zero/midterm_plot.pdf>]
+<By_One/midterm_plot.pdf, id=132, 510.58252pt x 409.42021pt>
+File: By_One/midterm_plot.pdf Graphic file (type pdf)
 
-<Trial_4/pocket_learning.pdf, id=208, 488.14714pt x 392.73286pt>
-File: Trial_4/pocket_learning.pdf Graphic file (type pdf)
+<use By_One/midterm_plot.pdf>
+Package pdftex.def Info: By_One/midterm_plot.pdf used on input line 51.
+(pdftex.def)             Requested size: 331.8747pt x 266.11998pt.
+ [3 <./By_One/midterm_plot.pdf>] [4]
+(./gen_error.py
+LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 8.
+) [5] [6]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 92.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 92.
+ (./midterm.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 92.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 92.
 
-<use Trial_4/pocket_learning.pdf>
-Package pdftex.def Info: Trial_4/pocket_learning.pdf used on input line 71.
-(pdftex.def)             Requested size: 244.07297pt x 196.36595pt.
- [6 <./Trial_4/hw3_plot.pdf> <./Trial_4/pocket_learning.pdf
 
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Trial_4/pocket_learning.pd
-f): PDF inclusion: multiple pdfs with page group included in a single page
->] <Trial_4/linear_regression.pdf, id=279, 488.14714pt x 392.73286pt>
-File: Trial_4/linear_regression.pdf Graphic file (type pdf)
+Package rerunfilecheck Warning: File `midterm.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
 
-<use Trial_4/linear_regression.pdf>
-Package pdftex.def Info: Trial_4/linear_regression.pdf used on input line 76.
-(pdftex.def)             Requested size: 244.07297pt x 196.36595pt.
-
-<Trial_4/pocket_with_lr.pdf, id=280, 488.14714pt x 392.73286pt>
-File: Trial_4/pocket_with_lr.pdf Graphic file (type pdf)
-
-<use Trial_4/pocket_with_lr.pdf>
-Package pdftex.def Info: Trial_4/pocket_with_lr.pdf used on input line 80.
-(pdftex.def)             Requested size: 244.07297pt x 196.36595pt.
- [7 <./Trial_4/linear_regression.pdf> <./Trial_4/pocket_with_lr.pdf
-
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Trial_4/pocket_with_lr.pdf
-): PDF inclusion: multiple pdfs with page group included in a single page
->] <No_Outliers/linear_regression.pdf, id=323, 484.3125pt x 392.73286pt>
-File: No_Outliers/linear_regression.pdf Graphic file (type pdf)
-
-<use No_Outliers/linear_regression.pdf>
-Package pdftex.def Info: No_Outliers/linear_regression.pdf used on input line 9
-0.
-(pdftex.def)             Requested size: 242.15565pt x 196.36595pt.
-
-<No_Outliers/pocket_learning.pdf, id=324, 484.3125pt x 392.73286pt>
-File: No_Outliers/pocket_learning.pdf Graphic file (type pdf)
-
-<use No_Outliers/pocket_learning.pdf>
-Package pdftex.def Info: No_Outliers/pocket_learning.pdf used on input line 95.
-
-(pdftex.def)             Requested size: 242.15565pt x 196.36595pt.
- [8 <./No_Outliers/linear_regression.pdf> <./No_Outliers/pocket_learning.pdf
-
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./No_Outliers/pocket_learnin
-g.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] <Outliers/hw3_plot.pdf, id=362, 512.50375pt x 409.42021pt>
-File: Outliers/hw3_plot.pdf Graphic file (type pdf)
-
-<use Outliers/hw3_plot.pdf>
-Package pdftex.def Info: Outliers/hw3_plot.pdf used on input line 109.
-(pdftex.def)             Requested size: 333.12349pt x 266.11998pt.
-
-<Outliers/pocket_learning.pdf, id=363, 484.3125pt x 392.73286pt>
-File: Outliers/pocket_learning.pdf Graphic file (type pdf)
-
-<use Outliers/pocket_learning.pdf>
-Package pdftex.def Info: Outliers/pocket_learning.pdf used on input line 116.
-(pdftex.def)             Requested size: 211.38832pt x 171.4187pt.
-
-<Outliers/linear_regression.pdf, id=364, 484.3125pt x 392.73286pt>
-File: Outliers/linear_regression.pdf Graphic file (type pdf)
-
-<use Outliers/linear_regression.pdf>
-Package pdftex.def Info: Outliers/linear_regression.pdf used on input line 119.
-
-(pdftex.def)             Requested size: 211.38832pt x 171.4187pt.
-
-<Outliers/pocket_with_lr.pdf, id=365, 484.3125pt x 392.73286pt>
-File: Outliers/pocket_with_lr.pdf Graphic file (type pdf)
-
-<use Outliers/pocket_with_lr.pdf>
-Package pdftex.def Info: Outliers/pocket_with_lr.pdf used on input line 121.
-(pdftex.def)             Requested size: 211.38832pt x 171.4187pt.
- [9 <./Outliers/hw3_plot.pdf>] [10 <./Outliers/pocket_learning.pdf> <./Outliers
-/linear_regression.pdf
-
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Outliers/linear_regression
-.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-> <./Outliers/pocket_with_lr.pdf
-
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Outliers/pocket_with_lr.pd
-f): PDF inclusion: multiple pdfs with page group included in a single page
->]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 128.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 128.
- (./Homework 3.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 128.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 128.
-Package rerunfilecheck Info: File `"Homework 3".out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 128.
+Package rerunfilecheck Info: Checksums for `midterm.out':
+(rerunfilecheck)             Before: F012DD537CC0397E8917FFB337095244;405
+(rerunfilecheck)             After:  F712919944525CA27832AEC5EA7EA83B;464.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 92.
  ) 
 Here is how much of TeX's memory you used:
- 18560 strings out of 493089
- 338234 string characters out of 6134842
- 432737 words of memory out of 5000000
- 21623 multiletter control sequences out of 15000+600000
- 11556 words of font info for 45 fonts, out of 8000000 for 9000
+ 18457 strings out of 493089
+ 335979 string characters out of 6134842
+ 433382 words of memory out of 5000000
+ 21545 multiletter control sequences out of 15000+600000
+ 12468 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,7n,54p,681b,1935s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,7n,54p,726b,1916s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
-r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
-local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/lo
-cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
-al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on "Homework 3.pdf" (10 pages, 775973 bytes).
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
+r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
+local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loca
+l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on midterm.pdf (6 pages, 326662 bytes).
 PDF statistics:
- 528 PDF objects out of 1000 (max. 8388607)
- 260 compressed objects within 3 object streams
- 87 named destinations out of 1000 (max. 500000)
- 83 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 295 PDF objects out of 1000 (max. 8388607)
+ 187 compressed objects within 2 object streams
+ 67 named destinations out of 1000 (max. 500000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 

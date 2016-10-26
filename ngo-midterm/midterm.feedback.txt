@@ -1,0 +1,18 @@
+100pts
+
+Helen,
+
+Here is your feedback and grade breakdown by problems:
+
+1) The experiments seem ok, except that you may not have given the perceptron
+enough time to make progress after the linear regression starting point. What
+if 500 wasn't enough? -1pt
+
+2) Excellent! 
+
+3) Good picture/drawing. +5pts
+
+
+Peace,
+
+- Dr. Rivas

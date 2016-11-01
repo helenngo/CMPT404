@@ -1,0 +1,25 @@
+60 pts
+
+Helen,
+
+Here is the breakdown of your grade and feedback by parts:
+
+1.a) Pocket Algorithm starting at w=0
+
+- Good experiments.
+
+
+1.b) Linear Regression as classification
+
+- Good experiments.
+
+
+1.c) Pocket Algorithm starting with Linear Regression
+
+- Good experiments.
+
+Overall ver good. But you didn't do the grad student questions this time?
+
+Peace,
+- Dr. Rivas
+

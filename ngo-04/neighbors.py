@@ -32,7 +32,7 @@ class Neighbors:
 		# Housekeeping
 		Eout = []
 		N = len(x)
-		maxk = int(2*np.floor((N*(folds-1)/folds+1)/2)-1)
+		maxk = int(N*(folds-1)/folds)
 		# Output Eout list for k-neighbor range
 		for n_neighbors in range(1, maxk, 2):
 			kf = KFold(n_splits = folds)
@@ -43,8 +43,8 @@ class Neighbors:
 				reg = neighbors.KNeighborsRegressor(
 					n_neighbors, weights = 'distance')
 				reg.fit(x_train, y_train)
-				kscore.append(reg.score(x_test, 
-					y_test))
+				kscore.append(abs(reg.score(x_test, 
+					y_test)))
 			Eout.append(sum(kscore)/len(kscore))
 		return Eout
 
@@ -53,6 +53,7 @@ def main():
 	kvalues = np.empty([300,1]) # vector of best k's
 	# Conducting 100 trials
 	for trial in range(0,100):
+		print(trial)
 		d = Neighbors(N=1000) # generate data
 		Eout = d.bestK() # Eout array
 		# Determining best k

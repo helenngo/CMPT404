@@ -1,0 +1,70 @@
+\documentclass[a4paper]{article}
+\usepackage[letterpaper, margin=1in]{geometry} % page format
+\usepackage{listings,graphicx,amsmath, amssymb, amsfonts, amsthm, tikz, hyperref, fullpage, setspace, enumerate, mathtools, arydshln, hanging}
+\usepackage[english]{babel}
+
+\title{Milestone}
+\author{Helen Ngo}
+\date{\today}
+
+\begin{document}
+\lstset{language=Python,basicstyle=\ttfamily\footnotesize}
+
+\maketitle
+
+\begin{doublespace}
+
+\section{Introduction}
+Many people in the computer science field fail to understand the mathematical background behind Artificial Intelligence algorithms. This paper simplifies a mathematical concept used in AI for amateur/new computer scientist and reinforces the importance of understanding these concepts for optimization and collaboration.
+\begin{enumerate}
+\item Image processing focuses on matrices. This paper will extend simple linear algebra into convolutional neural networks by converting the idea of convolution into matrices, then code, before expanding it to the convolution technique used in Caffe.
+\item Examine the different techniques of convolution in the ``High Performance Convolutional Neural Networks for Document Processing," as applied to the convolution in Caffe.
+\item In addition, the chronological examination of changes/commits of the will show the importance of collaboration in optimization.
+\end{enumerate}
+
+\section{Background and/or Related Work}
+In Jia's memo, he mentions that many people commented to him that ``Caffe's convolution has some memory issues." While Jia does not refute that problem, he defends his originally temporary choice by pointing out that his method is "faster than any trivial implementation unless you optimize really seriously."
+
+In the ``High Performance Convolutional Neural Networks for Document Processing," the authors examine three different ways of convolution in neural networks.
+
+\newpage 
+\section{Methodology}
+The paper will be separated into three parts, with the following methodology for each part.
+
+\subsection{Mathematical to AI Concept}
+\begin{enumerate}
+\item Description of mathematical convolution and its influence on convolutional neural networks.
+\item Mathematical convolution as matrices and how to apply using code.
+\begin{enumerate}
+\item Coding convolution with populated matrices.
+\item Coding without populating matrices, but to get the same effect.
+\end{enumerate}
+\item Explaining the convolution code of Caffe.
+\end{enumerate}
+
+\subsection{Techniques of Convolution}
+The Caffe code already uses one of the techniques. We examine the other two.
+\begin{enumerate}
+\item Rewrite the code(s) using the other techniques.
+\item Examine the code(s) in terms of Big-O and difficulty in implementation.
+\item Consider the real time implementation using the paper.
+\item Compare the three different techniques.
+\end{enumerate}
+
+\subsection{Chronological Examination}
+Both compare the changes between individual commits, and compare the code before and after the involvement of a collaborator. (There is one main other collaborator for this portion of the code.)
+
+\section{Further Examination}
+Using the methodologies described above, the ``experiments" need to be conducted then analyzed. Form a conclusion regarding the benefits of collaboration, focusing on how it optimized the code, at least of the convolution aspect.
+
+\section{References/ Bibliography}
+\begin{hangparas}{.25in}{1}
+Jia, Yangqing. "Convolution in Caffe: A Memo." GitHub. BERKELEY VISION AND LEARNING CENTER, 19 June 2015. Web. 15 Nov. 2016.
+Kumar Chellapilla, Sidd Puri, Patrice Simard. High Performance Convolutional Neural Net- works for Document Processing. Guy Lorette. Tenth International Workshop on Frontiers in Handwriting Recognition, Oct 2006, La Baule (France), Suvisoft, 2006. <inria-00112631>
+
+$https://github.com/BVLC/caffe/blob/master/src/caffe/test/test_convolution_layer.cpp$ 
+
+$https://www.tensorflow.org/versions/master/tutorials/deep_cnn/index.html$ 
+\end{hangparas}
+\end{doublespace}
+\end{document}

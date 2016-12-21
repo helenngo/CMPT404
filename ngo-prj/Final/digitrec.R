@@ -63,20 +63,16 @@ View(rf$importance)
 
 varImpPlot(rf,n.var = 100)
 varImpPlot(rf,n.var = 25)
-
 as.integer(ncol(train)*.25)
-
 top25 <- names(sort(rf$importance[,"MeanDecreaseAccuracy"], decreasing = TRUE)[1:as.integer(ncol(train)*.25)])
-
 train <- train[,sapply(top25, function(x) which(x == colnames(train)))]
-
 test <- test[,sapply(top25, function(x) which(x == colnames(test)))]
 
 rfTop25 <- randomForest(train, trainLabels, xtest=test, ntree=numTrees, importance = TRUE)
 predictionsTop25 <- data.frame(ImageId=1:nrow(test), Label=levels(labels)[rfTop25$test$predicted])
 mean(predictionsTop25$Label == testLabels)
 
-strictlyPositive <- names(rf$importance[,"MeanDecreaseAccuracy"] > 0)
+length(which(rf$importance[,"MeanDecreaseAccuracy"] > 0))
 
 set.seed(0)
 train <- trainData
